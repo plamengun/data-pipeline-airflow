@@ -1,0 +1,3 @@
+api_config:
+  base_url: "https://eodhd.com/api/exchange-symbol-list/{exchange}?api_token={api_token}&fmt=json"
+  exchange: "NASDAQ"
