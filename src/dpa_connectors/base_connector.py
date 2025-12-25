@@ -1,11 +1,12 @@
 from abc import ABC, abstractmethod
+from ..dpa_utils.base_config import BaseConfig
 
 class BaseConnector(ABC):
     '''
     This is a base class for all Connectors. It extablishes the base contract for child classes.
     '''
-    def __init__(self):
-        pass
+    def __init__(self, config: BaseConfig):
+        self.config = config
 
     @abstractmethod
     def get_raw_data(self):
@@ -15,5 +16,6 @@ class BaseConnector(ABC):
     def write_raw_data(self):
         raise NotImplementedError("Connector class should override write_raw_data method from parent.")
 
+    @abstractmethod
     def load_config(self):
-        pass
+        raise NotImplementedError("Connector class should override load_config method from parent.")
