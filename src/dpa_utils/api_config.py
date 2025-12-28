@@ -6,7 +6,6 @@ import yaml
 load_dotenv()
 
 class APIConfig(BaseConfig):
-    
     def __init__(
             self,
             config_path: str,

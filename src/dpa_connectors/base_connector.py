@@ -3,7 +3,7 @@ from ..dpa_utils.base_config import BaseConfig
 
 class BaseConnector(ABC):
     '''
-    This is a base class for all Connectors. It extablishes the base contract for child classes.
+    This is a base class for all Connectors. It establishes the base contract for child classes.
     '''
     def __init__(self, config: BaseConfig):
         self.config = config

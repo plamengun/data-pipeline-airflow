@@ -1,11 +1,10 @@
 import requests
 from .base_connector import BaseConnector
-from ..dpa_utils.base_config import BaseConfig
 from ..dpa_utils.api_config import APIConfig
 
 
 class APIConnector(BaseConnector):
-    def __init__(self, config: BaseConfig):
+    def __init__(self, config: APIConfig):
         super().__init__(config=config)
 
     def get_raw_data(self):

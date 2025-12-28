@@ -1,12 +1,9 @@
 from abc import ABC, abstractmethod
-import os
 from dotenv import load_dotenv
-import yaml
 
 load_dotenv()
 
 class BaseConfig(ABC):
-    
     def __init__(self, config_path: str, config_key: str, secret_key: str):
         if not config_path:
             raise ValueError("config_path is required")
