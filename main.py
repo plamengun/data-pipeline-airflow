@@ -3,7 +3,7 @@ from src.dpa_utils.api_config import APIConfig
 
 
 config = APIConfig('src/configs/connector_config.yml', 'EODHD', 'EODHD_TOKEN')
-inst = APIConnector(config)
+inst = APIConnector(config, "/home/kimbuzi/Documents/Projects/bronze_dump.txt")
 
-print(inst.get_raw_data())
+print(inst.write_raw_data())
 

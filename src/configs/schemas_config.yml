@@ -1,0 +1,17 @@
+schemas:
+  eodhd_tickers_v1:
+    columns:
+      - { name: Code, type: string, nullable: false }
+      - { name: Name, type: string, nullable: true }
+      - { name: Country, type: string, nullable: true }
+      - { name: Exchange, type: string, nullable: true }
+      - { name: Currency, type: string, nullable: true }
+      - { name: Type, type: string, nullable: true }
+      - { name: Isin, type: string, nullable: true }
+      - { name: ingestion_date, type: date32, nullable: false }
+      - { name: ingestion_ts, type: timestamp, unit: us, timezone: UTC, nullable: false }
+      - { name: source, type: string, nullable: false }
+
+    partition_cols: [ingestion_date]
+    parquet:
+      compression: snappy

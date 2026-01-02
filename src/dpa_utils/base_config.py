@@ -9,6 +9,7 @@ class BaseConfig(ABC):
             raise ValueError("config_path is required")
         if not config_key:
             raise ValueError("config_key is required")
+        #TODO: Refactor. Secret_Key should be optional. Only API configs care about secret keys!
         if not secret_key:
             raise ValueError("secret_env_var is required")
 
@@ -16,6 +17,7 @@ class BaseConfig(ABC):
         self._config_key = config_key
         self._secret_key= secret_key
 
+    #TODO: Refactor this!!! This is not responsibility of the Config class, but rather to the Connector. Config does not care about URLs and API tokens!
     @abstractmethod
     def construct_url(self) -> str:
         raise NotImplementedError("Config class should override construct_url method from parent.")

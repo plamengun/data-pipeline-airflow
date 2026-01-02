@@ -1,0 +1,24 @@
+[project]
+name = "dpa-connectors"
+version = "0.1.0"
+description = "Package containing Connectors for Data-Pipeline-Airflow"
+authors = [
+    {name = "plamengun",email = "plamenmgunchev@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "python-dotenv>=1.0.0",
+    "yfinance>=0.2.40"
+]
