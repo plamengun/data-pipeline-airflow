@@ -13,8 +13,11 @@ class APIConfig(BaseConfig):
             secret_key: str
             ):
         super().__init__(config_path=config_path, config_key=config_key, secret_key=secret_key)
+        if not secret_key:
+            raise ValueError("Secret key value is required for APIConfig!")
+        #TODO Add data property to contain the loaded config data
 
-    def construct_url(self) -> str:
+    def _load_config(self) -> str:
         with open(self._config_path, "r") as f:
             config = yaml.safe_load(f)
 
